@@ -1,0 +1,124 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static '/assets/styl.css' %}">
+<script src="{% static '/assets/script.js' %}"></script>
+</head>
+<body>
+
+
+
+<!--    <button id="Play_Button">Play</button>-->
+<!--    <button id="Play_Button2">Play</button>-->
+<!--      <h2>Sound Information</h2>-->
+<!--      <div id="length">Duration:</div>-->
+<!--      <div id="source">Source:</div>-->
+<!--      <div id="status" style="color:red;">Status: Loading</div>-->
+<!--      <hr>-->
+<!--      <h2>Control Buttons</h2>-->
+<!--      <button id="play">Play</button>-->
+<!--      <button id="pause">Pause</button>-->
+<!--      <button id="restart">Restart</button>-->
+<!--      <hr>-->
+<!--      <h2>Playing Information</h2>-->
+<!--      <div id="currentTime">0</div>-->
+    {% for sound in sounds %}
+    <h3>
+    {{ sound.title }}
+    </h3>
+    <h3>{{ sound.artist }}</h3>
+<audio id="player" loop="loop">
+<source  src="{{sound.audio_file.url}}" type="audio/mp3"/>
+</audio>
+<audio id="player2" loop="loop">
+<source  src="{{sound.audio_file2.url}}" type="audio/mp3"/>
+</audio>
+<audio id="player3" loop="loop">
+<source  src="{{sound.audio_file3.url}}" type="audio/mp3"/>
+</audio>
+<audio id="player4" loop="loop">
+<source  src="{{sound.audio_file4.url}}" type="audio/mp3"/>
+</audio>
+<audio id="player5" loop="loop">
+<source  src="{{sound.audio_file5.url}}" type="audio/mp3"/>
+</audio>
+<audio id="player6" loop="loop">
+<source  src="{{sound.audio_file6.url}}" type="audio/mp3"/>
+</audio>
+<audio id="player7" loop="loop">
+<source  src="{{sound.audio_file7.url}}" type="audio/mp3"/>
+</audio>
+<audio id="player8" loop="loop">
+<source  src="{{sound.audio_file8.url}}" type="audio/mp3"/>
+</audio>
+<audio id="player9" loop="loop">
+<source  src="{{sound.audio_file9.url}}" type="audio/mp3"/>
+</audio>
+
+<button class='unmute' onclick="document.getElementById('player').muted = !document.getElementById('player').muted;$(this).toggleClass('mute')">Mute</button>
+<button class='loop' onclick="document.getElementById('player').loop = !document.getElementById('player').loop;$(this).toggleClass('mute')">Loop</button>
+<button onclick="javascript:play()">Play</button>
+<progress id="progress1" value="0"></progress>
+<br>
+<button class='unmute' onclick="document.getElementById('player2').muted = !document.getElementById('player2').muted;$(this).toggleClass('mute')">Mute</button>
+<button class='loop' onclick="document.getElementById('player2').loop = !document.getElementById('player2').loop;$(this).toggleClass('mute')">Loop</button>
+<button onclick="javascript:play2()">Play</button>
+<progress id="progress2" value="0"></progress>
+<br>
+<button class='unmute' onclick="document.getElementById('player3').muted = !document.getElementById('player3').muted;$(this).toggleClass('mute')">Mute</button>
+<button class='loop' onclick="document.getElementById('player3').loop = !document.getElementById('player3').loop;$(this).toggleClass('mute')">Loop</button>
+<button onclick="javascript:play3()">Play</button>
+<progress id="progress3" value="0"></progress>
+<br>
+<button class='unmute' onclick="document.getElementById('player4').muted = !document.getElementById('player4').muted;$(this).toggleClass('mute')">Mute</button>
+<button class='loop' onclick="document.getElementById('player4').loop = !document.getElementById('player4').loop;$(this).toggleClass('mute')">Loop</button>
+<button onclick="javascript:play4()">Play</button>
+<progress id="progress4" value="0"></progress>
+<br>
+<button class='unmute' onclick="document.getElementById('player5').muted = !document.getElementById('player5').muted;$(this).toggleClass('mute')">Mute</button>
+<button class='loop' onclick="document.getElementById('player5').loop = !document.getElementById('player5').loop;$(this).toggleClass('mute')">Loop</button>
+<button onclick="javascript:play5()">Play</button>
+<progress id="progress5" value="0"></progress>
+<br>
+<button class='unmute' onclick="document.getElementById('player6').muted = !document.getElementById('player6').muted;$(this).toggleClass('mute')">Mute</button>
+<button class='loop' onclick="document.getElementById('player6').loop = !document.getElementById('player6').loop;$(this).toggleClass('mute')">Loop</button>
+<button onclick="javascript:play6()">Play</button>
+<progress id="progress6" value="0"></progress>
+<br>
+<button class='unmute' onclick="document.getElementById('player7').muted = !document.getElementById('player7').muted;$(this).toggleClass('mute')">Mute</button>
+<button class='loop' onclick="document.getElementById('player7').loop = !document.getElementById('player7').loop;$(this).toggleClass('mute')">Loop</button>
+<button onclick="javascript:play7()">Play</button>
+<progress id="progress7" value="0"></progress>
+<br>
+<button class='unmute' onclick="document.getElementById('player8').muted = !document.getElementById('player8').muted;$(this).toggleClass('mute')">Mute</button>
+<button class='loop' onclick="document.getElementById('player8').loop = !document.getElementById('player8').loop;$(this).toggleClass('mute')">Loop</button>
+<button onclick="javascript:play8()">Play</button>
+<progress id="progress8" value="0"></progress>
+<br>
+<button class='unmute' onclick="document.getElementById('player9').muted = !document.getElementById('player9').muted;$(this).toggleClass('mute')">Mute</button>
+<button class='loop' onclick="document.getElementById('player9').loop = !document.getElementById('player9').loop;$(this).toggleClass('mute')">Loop</button>
+<button onclick="javascript:play9()">Play</button>
+
+<progress id="progress9" value="0"></progress>
+<br>
+<br>
+<br>
+<button onclick="javascript:playall()">Play all</button>
+<button onclick="javascript:stopall()">Stop all</button>
+
+
+
+    <br>
+    {% endfor %}
+<!--<button id="button1"> Play </button>-->
+<!--      <button id="pause">Pause</button>-->
+
+</body>
+</html>
+
+

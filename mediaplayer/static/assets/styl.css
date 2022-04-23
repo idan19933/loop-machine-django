@@ -1,0 +1,40 @@
+
+h2 {
+color:red;
+
+}
+
+h3 {
+color:green;
+}
+
+.hp_slide{
+    width:100%;
+    background:white;
+    height:25px;
+}
+.hp_range{
+    width:0;
+    background:black;
+    height:25px;
+}
+
+.unmute {
+  background-image: url(http://franriavilla.in/images/unmute.png);
+  background-size: cover;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.mute {
+  background-image: url(http://franriavilla.in/images/mute.png);
+}
+
+.loop {
+color:green;
+}
+
+.noloop{
+color:red;
+}
